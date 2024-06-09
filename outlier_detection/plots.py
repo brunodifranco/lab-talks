@@ -12,7 +12,9 @@ def time_series_plot(
     fig.show()
 
 
-def time_series_outlier_plot(df: DataFrame, target_col: str):
+def time_series_outlier_plot(
+    df: DataFrame, target_col: str, width: int = 1200, height: int = 500
+):
 
     fig = px.line(
         df, x="Datetime", y=target_col, title=f"{target_col} with Outliers Highlighted"
@@ -27,7 +29,10 @@ def time_series_outlier_plot(df: DataFrame, target_col: str):
         name="Outliers",
     )
 
-    fig.update_xaxes(title_text="Date")
     fig.update_yaxes(title_text=target_col)
+
+    fig.update_layout(
+        xaxis_title="Date", yaxis_title=target_col, width=width, height=height
+    )
 
     fig.show()
