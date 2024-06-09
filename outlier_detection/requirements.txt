@@ -5,3 +5,4 @@ scikit-learn==1.5.0
 plotly==5.22.0
 nbformat>=4.2.0
 statsmodels==0.14.2
+tensorflow==2.16.1
